@@ -1,0 +1,86 @@
+__author__ = 'Connor'
+def longestPalindrome(s):
+    if s == '':
+        return ''
+    substr = ''
+    for i in range(len(s)):
+        j = len(s)-1
+        while j>i:
+            if s[i] != s[j]:
+                j -= 1
+                continue
+            if test(s[i:j+1]):
+                if len(substr) < len(s[i:j+1]):
+                    substr = s[i:j+1]
+                break
+            j -=1
+    return substr
+
+def test(s):
+    if s == '':
+        return True
+    i = 0
+    j = len(s)-1
+    while s[i]==s[j] and i <= j:
+        i += 1
+        j -= 1
+    if i>j:
+        return True
+    return False
+
+def test2(s):
+    if s == '':
+        return ''
+    news = ''
+    newsub = ''
+    for i in range(len(s)):
+        news +=s[i]
+        news += '#'
+
+    for i in range(len(news)):
+        j=0
+        while i-j > 0 and i+j < len(news):
+            if news[i-j] == news[i+j]:
+                j += 1
+            else:
+                break
+        if len(newsub) < len(news[i-j:i+j+1]):
+            newsub=news[i-j+1:i+j]
+
+    sub = ''
+    for i in range(len(newsub)):
+        if newsub[i] == '#':
+            continue
+        sub += newsub[i]
+
+    return sub
+def test3(str):
+    str = "#" + "#".join(str) + "#"
+    print (str)
+
+    i = 0
+    mx = 0
+    id = 0
+    p = [0 ] * len(str)
+    while i<len(str):
+        if mx > i:
+            p[i] = min(p[ 2*id-i],mx-i)
+        else:
+            p[i] = 1
+
+        while i-p[i] >=0 and i+p[i] < len(str) and str[i-p[i]]==str[i+p[i]]:
+            p[i] += 1
+
+        if mx < p[i]+i:
+            mx = p[i] + i
+            id = i
+        i+=1
+
+    return p
+
+ss = 'albaojbaljbabafd'
+ans = test3(ss)
+'''aa = 'abba'
+bb = 'aba'
+ans = test(ss)'''
+print(ans)
