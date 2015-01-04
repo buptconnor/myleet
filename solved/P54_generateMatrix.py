@@ -1,5 +1,5 @@
 __author__ = 'Connor'
-# Given an integer n, generate a square matrix filled with elements from 1 to n2 in spiral order.
+# Given an integer n, generate a square matrix filled wgith elements from 1 to n2 in spiral order.
 # [
 #  [ 1, 2, 3 ],
 #  [ 8, 9, 4 ],
