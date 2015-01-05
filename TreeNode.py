@@ -21,6 +21,23 @@ def consturctdefault():
     rc.right = TreeNode(1)
     return root
 
+def constructdefault1():
+    root = TreeNode(5)
+    lc = TreeNode(4)
+    rc = TreeNode(8)
+    root.left = lc
+    root.right = rc
+    lc.left = TreeNode(11)
+    lc = lc.left
+    lc.left = TreeNode(7)
+    lc.right = TreeNode(2)
+    rc.left = TreeNode(13)
+    rc.right = TreeNode(4)
+    rc = rc.right
+    rc.left = TreeNode(5)
+    rc.right = TreeNode(1)
+    return root
+
 def constructBST():
     root =TreeNode(3)
     p1 =  TreeNode(1)
