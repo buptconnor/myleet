@@ -55,6 +55,41 @@ def constructBST():
     p2.right = p6
     return root
 
+def contstructFlatten():
+    p1 = TreeNode(1)
+    p2 = TreeNode(2)
+    p3 = TreeNode(3)
+    p4 = TreeNode(4)
+    p5 = TreeNode(5)
+    p6 = TreeNode(6)
+
+    p1.left = p2
+    p1.right = p5
+    p2.left = p3
+    p2.right = p4
+    p5.right = p6
+
+    return p1
+
+def constructUnbalanced():
+    root = TreeNode(0)
+    p1 = TreeNode(1)
+    p2 = TreeNode(2)
+    p3 = TreeNode(3)
+    p4 = TreeNode(4)
+    p5 = TreeNode(5)
+    p6 = TreeNode(6)
+    p7 = TreeNode(7)
+
+    root.left = p1
+    root.right = p2
+    p1.left = p3
+    p1.right = p4
+    p2.right = p5
+    p3.left = p6
+    p6.left = p7
+    return root
+
 def constructSymmeric():
     root = TreeNode(1)
     p1 = TreeNode(2)
