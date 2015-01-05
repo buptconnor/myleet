@@ -2,7 +2,6 @@ __author__ = 'Connor'
 
 from TreeNode import TreeNode
 from TreeNode import printTree
-import ListNode
 from ListNode import consturct
 
 class Solution:
