@@ -41,7 +41,6 @@ def solveNQueens(n):
             queens[i] = -1
             continue
         i += 1
-
     return ans
 
 def convert(queens):
