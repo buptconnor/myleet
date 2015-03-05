@@ -26,5 +26,5 @@ class Solution:
 
 if __name__ == '__main__':
     so =Solution()
-    ans = so.fractionToDecimal(-50,8)
+    ans = so.fractionToDecimal(-1,2147483648)
     print(ans)
