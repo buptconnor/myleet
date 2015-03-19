@@ -70,7 +70,21 @@ def test2(word1,word2):
 
     return dp[m-1][n-1]
 
+def minDist(str1,str2):
+    M = len(str1) + 1
+    N = len(str2) + 1
+    dp = [[0 for j in range(N)] for i in range(M)]
+    for i in range(M):
+        dp[i][0] = i
+    for j in range(N):
+        dp[0][j] = j
+    for i in range(1,M):
+        for j in range(1,N):
+            dp[i][j] = min(dp[i-1][j]+1,dp[i][j-1]+1,dp[i-1][j-1] + (0 if str1[i-1] == str2[j-1] else 1))
 
+
+
+    return dp[M-1][N-1]
 
 
 
@@ -78,4 +92,4 @@ a = "horse"
 b =  "ros"
 # ans = minDistance(a,b)
 # print(ans)
-print(test(a,b))
+print(minDist(a,b))
